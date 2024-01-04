@@ -10,7 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { NationalTransferMultipleComponent } from './national-transfer-multiple/national-transfer-multiple.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
-import { TransferServiceComponent } from './transfer-service/transfer-service.component'; // Import FormsModule
+import { TransferServiceComponent } from './transfer-service/transfer-service.component'; 
+// Import FormsModule
 
 @NgModule({
   declarations: [
