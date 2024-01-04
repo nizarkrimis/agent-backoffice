@@ -1,0 +1,26 @@
+<p>list-transferts works!</p>
+
+<div class="transfers-container">
+  <h2>List of Transfers</h2>
+  <table class="transfers-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Sender</th>
+        <th>Receiver</th>
+        <th>Amount</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transfer of transfers">
+        <td>{{ transfer.date }}</td>
+        <td>{{ transfer.sender }}</td>
+        <td>{{ transfer.receiver }}</td>
+        <td>{{ transfer.amount }}</td>
+        <td>{{ transfer.type }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

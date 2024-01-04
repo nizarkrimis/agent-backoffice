@@ -1,0 +1,39 @@
+<!-- transfer-service.component.html -->
+<div class="transfer-service-container">
+    <h2>Transfer Service</h2>
+  
+    <label for="reference">Reference:</label>
+    <input type="text" id="reference" [(ngModel)]="reference">
+  
+    <button style="margin-left: 7px;" (click)="searchTransfer()">Search Transfer</button>
+  
+    <div *ngIf="orderIssuer && transferInfo">
+      <div class="summary">
+        <u><h3>Order Issuer Information:</h3></u>
+        <p>ID Agent (Point de vente) or Wallet: {{ orderIssuer.agentId || orderIssuer.wallet }}</p>
+        <p>Full yName : {{ orderIssuer.fullName }}</p>
+        <p>Date of Emission: {{ orderIssuer.emissionDate }}</p>
+      </div>
+  
+      <div class="summary">
+        <u><h3 style="margin-top: 40px;;">Transfer Information:</h3></u>
+        <p>Amount to Serve: {{ transferInfo.amount }}</p>
+        <p>Beneficiary Name: {{ transferInfo.beneficiaryFullName }}</p>
+      </div>
+  
+      <div *ngIf="!beneficiaryInfo">
+        <label for="beneficiaryName">Beneficiary Name:</label>
+        <input type="text" id="beneficiaryName" [(ngModel)]="verifyName">
+  
+        <!-- Ajoutez d'autres champs KYC ici -->
+
+        <div style="margin-top: 20px; margin-left:130px;">
+            <button (click)="validatePayment()">Validate Payment</button>
+        </div>
+        
+      </div>
+    </div>
+  
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  </div>
+  

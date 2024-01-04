@@ -1,0 +1,27 @@
+/* transfer-service.component.css */
+.transfer-service-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .summary {
+    margin-bottom: 20px;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+
+  button {
+    background-color: #4caf50;
+    color: white;
+    padding: 4px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

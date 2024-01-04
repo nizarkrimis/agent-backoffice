@@ -1,0 +1,55 @@
+/* profile.component.css */
+.profile-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .profile-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  img {
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-left: 30px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 80px;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  strong {
+    margin-right: 5px;
+  }
+
+.field_modify{
+    padding: 0;
+    margin-left: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  table{
+    margin-top: 40px;
+    margin-left: 100px;
+  }
+  
+  
