@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+<div class="client-list">
+  <h1>Client List</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let client of clients" (click)="goToClientDetails(client.id)">
+          <td>{{ client.id }}</td>
+          <td>{{ client.name }}</td>
+          <td>{{ client.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

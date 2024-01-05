@@ -4,10 +4,8 @@
   <h2>National Transfer to Multiple Receivers</h2>
   <form (submit)="submitTransfer()" #transferForm="ngForm">
     <label for="sender">Sender:</label>
-    <select id="sender" name="sender" [(ngModel)]="sender" required>
-      <option value="sender1">Sender 1</option>
-      <option value="sender2">Sender 2</option>
-    </select>
+<span>{{ senderName }}</span>
+
 
     <label for="amount">Amount:</label>
     <input

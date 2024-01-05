@@ -6,6 +6,8 @@ import { NationalTransferMultipleComponent } from './national-transfer-multiple/
 import { TransferServiceComponent } from './transfer-service/transfer-service.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ClientComponent } from './client/client.component';
+import { ClientDetailsComponent } from './client-details/client-details.component';
 
 const routes: Routes = [
   // ... other routes
@@ -17,6 +19,9 @@ const routes: Routes = [
   {path : 'transfer-service', component:TransferServiceComponent },
   {path : 'login', component:LoginComponent },
   {path : 'profile', component:ProfileComponent },
+  {path : 'clients', component:ClientComponent },
+  { path: 'client/:id', component:ClientDetailsComponent },
+
 ];
 
 @NgModule({
