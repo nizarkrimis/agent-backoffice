@@ -10,7 +10,9 @@ import { FormsModule } from '@angular/forms';
 import { NationalTransferMultipleComponent } from './national-transfer-multiple/national-transfer-multiple.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
-import { TransferServiceComponent } from './transfer-service/transfer-service.component'; 
+import { TransferServiceComponent } from './transfer-service/transfer-service.component';
+import { ClientComponent } from './client/client.component';
+import { ClientDetailsComponent } from './client-details/client-details.component'; 
 // Import FormsModule
 
 @NgModule({
@@ -22,7 +24,9 @@ import { TransferServiceComponent } from './transfer-service/transfer-service.co
     NationalTransferMultipleComponent,
     LoginComponent,
     ProfileComponent,
-    TransferServiceComponent
+    TransferServiceComponent,
+    ClientComponent,
+    ClientDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,21 @@
+<div class="client-details">
+    <h2>Client Details</h2>
+    <div *ngIf="client">
+      <dl>
+        <dt>ID:</dt>
+        <dd>{{ client.id }}</dd>
+  
+        <dt>Name:</dt>
+        <dd>{{ client.name }}</dd>
+  
+        <dt>Email:</dt>
+        <dd>{{ client.email }}</dd>
+      </dl>
+
+      <!-- Add the "Send Transfer" button with a click event -->
+      <button (click)="sendTransfer()">Send Transfer</button>
+    </div>
+    <div *ngIf="!client">
+      <p>Client not found</p>
+    </div>
+</div>
