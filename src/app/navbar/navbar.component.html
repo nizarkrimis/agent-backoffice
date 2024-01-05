@@ -1,4 +1,4 @@
-<div class="navbar">
+<!-- <div class="navbar">
     <a routerLink="/" routerLinkActive="active">Home</a>
 
     <a routerLink="/list-transferts" routerLinkActive="active">List of Transfers</a>
@@ -6,9 +6,23 @@
     <a routerLink="/national-transfer-multiple" routerLinkActive="active">National Transfer Multiple</a>
     <a routerLink="/transfer-service" routerLinkActive="active"> Transfer Service </a>
     <a routerLink="/profile" routerLinkActive="active"> Profile </a>
-    <a routerLink="/clients" routerLinkActive="active"> Clients </a>
-    
-
+    <a routerLink="/clients" routerLinkActive="active"> Clients </a> -->
     <!-- Add more navigation links as needed -->
-  </div>
+  <!-- </div> -->
   
+  
+  <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo" routerLink="/" routerLinkActive="active" >Transfer X</label>
+    <ul>
+      <li><a routerLink="/list-transferts" routerLinkActive="active">List of Transfers</a></li>
+      <!-- <li><a routerLink="/create-national-transfer" routerLinkActive="active">Create National Transfer</a></li> -->
+      <li><a routerLink="/national-transfer-multiple" routerLinkActive="active">Transfer Multiple</a></li>
+      <li><a routerLink="/transfer-service" routerLinkActive="active">Transfer Service</a></li>
+      <li><a routerLink="/clients" routerLinkActive="active">Clients</a></li>
+      <li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
+    </ul>
+  </nav>
