@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,20 +8,10 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
-  public username: string = '';
-  public password: string = '';
-  public errorMessage: string = '';
+  constructor(private router:Router){}
 
-  constructor() {}
-
-  public login(): void {
-    // Votre logique de login ici (c'est un exemple simple)
-    if (this.username === 'utilisateur' && this.password === 'motdepasse') {
-      this.errorMessage = '';
-      alert('Login réussi !');
-    } else {
-      this.errorMessage = 'Nom d\'utilisateur ou mot de passe incorrect.';
-    }
+  login(){
+    this.router.navigate(['profile']);
   }
 
 }

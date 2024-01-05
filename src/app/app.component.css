@@ -1,0 +1,8 @@
+.page{
+    background-image: url("src\assets\background.svg");
+    /* background-repeat:repeat-y; */
+    background-size:cover;
+    /* width: 100vw; */
+    min-height: 100vh;
+
+}
