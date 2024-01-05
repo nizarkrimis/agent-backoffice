@@ -90,7 +90,7 @@ button:hover{
 .left h1{
     color: #000;
     font-family: Inter;
-    font-size: 3.625rem;
+    font-size: 230%;
     font-style: italic;
     font-weight: 200;
     line-height: normal;
@@ -108,8 +108,8 @@ button:hover{
 
 .container{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     /* justify-self: center; */
     gap: 5rem;
     align-items: center;

@@ -6,11 +6,13 @@ div {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #008995;
+
   }
   
   h2 {
     text-align: center;
-    color: #333;
+    color: #fff;
   }
   
   form {
@@ -20,7 +22,7 @@ div {
   
   label {
     margin-top: 10px;
-    color: #555;
+    color: #fff;
   }
   
   select, input, textarea {
@@ -32,18 +34,22 @@ div {
   }
   
   button {
-    background-color: #4CAF50;
-    color: white;
+    background: #FFF;
+    color: #008995;
     padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     margin-bottom: 10px;
+    border: 3px solid #008995;
+    
   }
   
   button:hover {
-    background-color: #3ca33f;
+    background: #008995;
+    border: 3px solid #FFF;
+    color: #FFF;
   }
   
   /* Added style for added receivers */

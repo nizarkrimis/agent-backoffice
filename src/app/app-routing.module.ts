@@ -9,6 +9,8 @@ import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   // ... other routes
+  { path:'',pathMatch:'full',redirectTo:'login' },
+
   { path: 'list-transferts', component:ListTransfertsComponent },
   {path: 'create-national-transfer', component:CreateNationalTransferComponent },
   {path: 'national-transfer-multiple', component:NationalTransferMultipleComponent },
