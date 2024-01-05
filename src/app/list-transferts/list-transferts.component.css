@@ -3,6 +3,19 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  /* margin: 20px; */
+  border: solid 2px #aaa8a8;
+  background-color: #fff;
+  border: 1px solid #ccc;
+
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1{
+  padding-top: 10px;
+  text-align: center;
+  justify-content: center;
 }
 
 .transfers-table {
@@ -11,7 +24,8 @@
   margin-top: 20px;
 }
 
-.transfers-table th, .transfers-table td {
+.transfers-table th,
+.transfers-table td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;

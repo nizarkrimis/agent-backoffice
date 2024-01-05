@@ -1,21 +1,31 @@
 <app-navbar></app-navbar>
+
 <div class="client-list">
   <h1>Client List</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let client of clients" (click)="goToClientDetails(client.id)">
-          <td>{{ client.id }}</td>
-          <td>{{ client.name }}</td>
-          <td>{{ client.email }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>CNE</th>
+        <th>Phone</th>
+        <th>Balance</th>
+        <th>Account Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of clients" (click)="goToClientDetails(client.id)">
+        <td>{{ client.id }}</td>
+        <td>{{ client.firstname }} {{ client.lastname }}</td>
+        <td>{{ client.email }}</td>
+        <td>{{ client.cne }}</td>
+        <td>{{ client.phone }}</td>
+        <td>{{ client.balance }}</td>
+        <td>{{ client.accountType }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
   

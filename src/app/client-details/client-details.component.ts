@@ -23,14 +23,17 @@ export class ClientDetailsComponent implements OnInit {
 
   // Static client data (same as in client.component.ts)
   clients = [
-    { id: 1, name: 'Client 1', email: 'client1@example.com' },
-    { id: 2, name: 'Client 2', email: 'client2@example.com' },
+    { id: 1, firstname: "Client", lastname: '1', cne: 'EE995566', email: 'client1@example.com', phone: "0600000001", balance: 1500, accountType: "Normale" },
+    { id: 2, firstname: "Client", lastname: '2', cne: 'EE995567', email: 'client2@example.com', phone: "0600000002", balance: 2000, accountType: "Normale" },
     // Add more clients as needed
   ];
 
   // Add this method to navigate to national-transfer-multiple.component
   sendTransfer(): void {
-    // Navigate to national-transfer-multiple.component and pass the client's name
-    this.router.navigate(['/national-transfer-multiple', { name: this.client.name }]);
+    if (this.client) {
+      const clientName = `${this.client.firstname} ${this.client.lastname}`;
+      // Navigate to national-transfer-multiple.component and pass the client's name
+      this.router.navigate(['/national-transfer-multiple', { name: clientName }]);
+    }
   }
 }
