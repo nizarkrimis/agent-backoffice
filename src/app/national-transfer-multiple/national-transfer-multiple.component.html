@@ -35,7 +35,7 @@
 
     <button type="button" (click)="addReceiver()">Add Receiver</button>
 
-    <div *ngIf="addedReceivers.length > 0">
+    <div  class="receiver" *ngIf="addedReceivers.length > 0">
       <label>Added Receivers:</label>
       <ul>
         <li *ngFor="let receiver of addedReceivers">{{ receiver }}</li>

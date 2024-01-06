@@ -21,6 +21,7 @@ form {
 label {
   margin-top: 10px;
   color: #fff;
+  margin-bottom: 10px;
 }
 
 select,
@@ -54,9 +55,20 @@ button:hover {
 /* Added style for added receivers */
 ul {
   list-style-type: none;
-  padding: 0;
+  padding:10px 0;
+  list-style: inside;
 }
 
 li {
   margin-bottom: 5px;
+  
+}
+
+.receiver{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  background: rgb(0, 137, 149, 0.4);
 }

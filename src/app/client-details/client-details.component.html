@@ -27,8 +27,9 @@
     </dl>
 
     <!-- Add the "Send Transfer" button with a click event -->
-    <button (click)="sendTransfer()">Send Transfer</button>
   </div>
+  <button (click)="sendTransfer()">Send Transfer</button>
+
   <div *ngIf="!client">
     <p>Client not found</p>
   </div>
