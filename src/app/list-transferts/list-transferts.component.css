@@ -1,18 +1,18 @@
 /* src/app/list-transferts/list-transferts.component.css */
 .transfers-container {
-  max-width: 800px;
+  width: 90%;
   margin: 0 auto;
   padding: 20px;
   /* margin: 20px; */
   border: solid 2px #aaa8a8;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid #ccc;
 
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-h1{
+h1 {
   padding-top: 10px;
   text-align: center;
   justify-content: center;
@@ -22,13 +22,23 @@ h1{
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+
+  margin-bottom: 20px;
+  /* background-color: #e4e4e4; */
+  border-radius: 30px;
+  border-left: #e6e5e5 solid 1px;
+  border-right: #e6e5e5 solid 1px;
 }
+
 
 .transfers-table th,
 .transfers-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
+  border-bottom: 1px solid #ddd ;
+  padding:10px;
+  padding-top: 18px;
+  padding-bottom: 18px;
   text-align: left;
+
 }
 
 .transfers-table th {

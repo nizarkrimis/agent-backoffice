@@ -1,6 +1,6 @@
 .client-details {
-  background-color: #fff;
-  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.5);
+  max-width: 60%;
   margin: auto;
   padding: 20px;
   border: 1px solid #ccc;
