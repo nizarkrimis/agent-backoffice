@@ -2,6 +2,8 @@
 
 <div class="client-list">
   <h1>Client List</h1>
+  <input placeholder="Search" type="text" [(ngModel)]="searchInput" (input)="searchClients()" />
+
   <button (click)="openAddClientModal()">Add Client</button>
 
   <table>
@@ -17,7 +19,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let client of clients" (click)="goToClientDetails(client.id)">
+      <tr *ngFor="let client of filteredClients" (click)="goToClientDetails(client.id)">
         <td>{{ client.id }}</td>
         <td>{{ client.firstname }} {{ client.lastname }}</td>
         <td>{{ client.email }}</td>
@@ -31,37 +33,69 @@
 </div>
 
 <!-- Modal -->
-  <div class="modal-overlay" [hidden]="!showAddClientModal">
-    <div class="modal-content">
-      <h2>Add New Client</h2>
-      <form
-        #newClientForm="ngForm"
-        (ngSubmit)="addNewClient(newClientForm.value)"
-      >
-        <!-- <label for="firstname">First Name:</label> -->
-        <input placeholder="First Name" type="text" id="firstname" name="firstname" ngModel required />
+<div class="modal-overlay" [hidden]="!showAddClientModal">
+  <div class="modal-content">
+    <h2>Add New Client</h2>
+    <form
+      #newClientForm="ngForm"
+      (ngSubmit)="addNewClient(newClientForm.value)"
+    >
+      <!-- <label for="firstname">First Name:</label> -->
+      <input
+        placeholder="First Name"
+        type="text"
+        id="firstname"
+        name="firstname"
+        ngModel
+        required
+      />
 
-        <!-- <label  for="lastname">Last Name:</label> -->
-        <input placeholder="Last Name" type="text" id="lastname" name="lastname" ngModel required />
+      <!-- <label  for="lastname">Last Name:</label> -->
+      <input
+        placeholder="Last Name"
+        type="text"
+        id="lastname"
+        name="lastname"
+        ngModel
+        required
+      />
 
-        <!-- <label for="cne">CNE:</label> -->
-        <input placeholder="CNE" type="text" id="cne" name="cne" ngModel />
+      <!-- <label for="cne">CNE:</label> -->
+      <input placeholder="CNE" type="text" id="cne" name="cne" ngModel />
 
-        <!-- <label for="email">Email:</label> -->
-        <input placeholder="Email" type="email" id="email" name="email" ngModel required />
+      <!-- <label for="email">Email:</label> -->
+      <input
+        placeholder="Email"
+        type="email"
+        id="email"
+        name="email"
+        ngModel
+        required
+      />
 
-        <!-- <label for="phone">Phone:</label> -->
-        <input placeholder="Phone" type="text" id="phone" name="phone" ngModel />
+      <!-- <label for="phone">Phone:</label> -->
+      <input placeholder="Phone" type="text" id="phone" name="phone" ngModel />
 
-        <!-- <label for="balance">Balance:</label> -->
-        <input placeholder="Balance" type="number" id="balance" name="balance" ngModel />
- 
-        <!-- <label for="accountType">Account Type:</label> -->
-        <input placeholder="Account Type" type="text" id="accountType" name="accountType" ngModel />
+      <!-- <label for="balance">Balance:</label> -->
+      <input
+        placeholder="Balance"
+        type="number"
+        id="balance"
+        name="balance"
+        ngModel
+      />
 
-        <button type="submit">Add Client</button>
-        <button type="button" (click)="closeAddClientModal()">Cancel</button>
-      </form>
-    </div>
+      <!-- <label for="accountType">Account Type:</label> -->
+      <input
+        placeholder="Account Type"
+        type="text"
+        id="accountType"
+        name="accountType"
+        ngModel
+      />
+
+      <button type="submit">Add Client</button>
+      <button type="button" (click)="closeAddClientModal()">Cancel</button>
+    </form>
   </div>
-
+</div>

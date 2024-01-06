@@ -1,5 +1,7 @@
 /* src/app/list-transferts/list-transferts.component.css */
 .transfers-container {
+  display: flex;
+  flex-direction: column;
   width: 90%;
   margin: 0 auto;
   padding: 20px;
@@ -30,15 +32,13 @@ h1 {
   border-right: #e6e5e5 solid 1px;
 }
 
-
 .transfers-table th,
 .transfers-table td {
-  border-bottom: 1px solid #ddd ;
-  padding:10px;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
   padding-top: 18px;
   padding-bottom: 18px;
   text-align: left;
-
 }
 
 .transfers-table th {
@@ -47,4 +47,32 @@ h1 {
 
 .transfers-table tbody tr:hover {
   background-color: #f5f5f5;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 98%;
+}
+
+
+button {
+  background: #fff;
+  color: #008995;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 3px solid #008995;
+}
+
+button:hover {
+  background: #008995;
+  border: 3px solid #fff;
+  color: #fff;
 }

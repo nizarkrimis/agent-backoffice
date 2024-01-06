@@ -68,6 +68,7 @@ u {
   margin-bottom: 10px;
 }
 p {
+  margin-bottom: 8px;
   color: #000;
   /* font-size: large; */
 }
@@ -80,7 +81,7 @@ p {
   flex-direction: column;
   justify-content: center;
   justify-content: center;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid #000;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);

@@ -16,7 +16,26 @@ export class ClientComponent {
   ];
   showAddClientModal: boolean = false;
 
-  constructor(private router: Router) {}
+  filteredClients: any[] = [];
+  searchInput: string = '';
+
+
+  constructor(private router: Router) {
+    this.filteredClients = this.clients; // Initialize filteredClients with all clients
+
+   }
+
+   searchClients(): void {
+    this.filteredClients = this.clients.filter(client =>
+      Object.values(client).some(value => {
+        if (typeof value === 'string' || typeof value === 'number') {
+          const stringValue = String(value).toLowerCase();
+          return stringValue.includes(this.searchInput.toLowerCase());
+        }
+        return false;
+      })
+    );
+  }
 
   openAddClientModal(): void {
     this.showAddClientModal = true;
@@ -24,7 +43,7 @@ export class ClientComponent {
   closeAddClientModal(): void {
     this.showAddClientModal = false;
   }
-  
+
   addNewClient(newClient: any): void {
     // Validate and save the new client
     // Example: (you may need to perform additional validations)
