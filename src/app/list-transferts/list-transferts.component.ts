@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgComponentOutlet } from '@angular/common';
 import { TransfertsService } from '../service/transferts.service';
 
 @Component({

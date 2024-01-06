@@ -2,8 +2,11 @@
 
 <div class="transfers-container">
   <h1>List of Transfers</h1>
-  <input placeholder="Search" type="text" [(ngModel)]="searchInput" (input)="searchTransers()" />
+  <input placeholder="Search" type="text" [(ngModel)]="searchInput" (input)="searchTransfers()" />
 <button routerLink="/transfer-service" routerLinkActive="active" >Transfer Service</button>
+<button (click)="exportToExcel()">Export to Excel</button>
+<h1>kjkjk</h1>
+
 
   <table class="transfers-table">
     <thead>
@@ -16,10 +19,11 @@
         <th>Type</th>
         <th>State</th>
         <th>Date</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let transfer of filteredTransers">
+      <tr *ngFor="let transfer of filteredTransfers">
         <td>{{ transfer.transerReference }}</td>
         <td>{{ transfer.senderid }}</td>
         <td>{{ transfer.receiverid }}</td>
@@ -31,6 +35,11 @@
           <b>{{ transfer.state }}</b>
         </td>
         <td>{{ transfer.date }}</td>
+        <td class="warn">
+          <button>Extourner</button>
+          &nbsp; &nbsp;
+          <button>Restituer</button>
+        </td>
       </tr>
     </tbody>
   </table>
