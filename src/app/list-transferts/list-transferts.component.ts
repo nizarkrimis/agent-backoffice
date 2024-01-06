@@ -17,14 +17,14 @@ export class ListTransfertsComponent implements OnInit {
     // Add more static transfer data as needed
   ];
 
-  filteredTransers: any[] = [];
+  filteredTransfers: any[] = [];
   searchInput: string = '';
 
   constructor() { 
-    this.filteredTransers = this.transfers;
+    this.filteredTransfers = this.transfers;
   }
-  searchTransers(): void {
-    this.filteredTransers = this.transfers.filter(transfer =>
+  searchTransfers(): void {
+    this.filteredTransfers = this.transfers.filter(transfer =>
       Object.values(transfer).some(value => {
         if (typeof value === 'string' || typeof value === 'number') {
           const stringValue = String(value).toLowerCase();
