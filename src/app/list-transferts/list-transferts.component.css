@@ -75,3 +75,21 @@ button:hover {
   border: 3px solid #fff;
   color: #fff;
 }
+
+.warn button {
+  background: #d13333;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 3px solid #fff;
+}
+
+.warn button:hover {
+  background: #fff;
+  border: 3px solid #d13333;
+  color: #d13333;
+}
