@@ -1,52 +1,63 @@
 <app-navbar></app-navbar>
 
-<div class="transfer-service-container carte" style="margin-top: 10px;">
-    <h1 style="margin-bottom: 10px;text-align:center; color:#F0F0F0    ">Transfer Service</h1>
-  
-    <label for="reference" style="margin-right: 6px;">Reference:</label><br>
-    <div style="margin-top: 6px;">
-      <input type="text" id="reference" [(ngModel)]="reference">
-  
-      <button (click)="searchTransfer()" class="chercher">Search Transfer</button>
-    </div>
+<div class="transfer-service-container carte">
+  <h1>Transfer Service</h1>
 
-  
-    <div *ngIf="orderIssuer && transferInfo">
-      <div class="summary" style="margin-top: 30px;">
-        <u><h3 style="margin-bottom: 6px;">Order Issuer Information:</h3></u>
-        <div class="mini-container">
-          <p>ID Agent (Point de vente) or Wallet: <b>{{ orderIssuer.agentId || orderIssuer.wallet }}</b></p>
-          <p>Full yName : <b>{{ orderIssuer.fullName }}</b></p>
-          <p>Date of Emission: <b>{{ orderIssuer.emissionDate }}</b></p>
-        </div>
-
-      </div>
-  
-      <div class="summary">
-        <u><h3 style="margin-top: 30px; margin-bottom:6px;">Transfer Information:</h3></u>
-        <div class="mini-container">
-          <p>Amount to Serve: <b>{{ transferInfo.amount }}</b></p>
-          <p>Beneficiary Name: <b>{{ transferInfo.beneficiaryFullName }}</b></p>
-        </div>
-      </div>
-  
-      <div *ngIf="!beneficiaryInfo">
-        <label for="beneficiaryName" style="margin-right: 6px; ">Beneficiary Name:</label>
-        <input type="text" id="beneficiaryName" style="margin-top: 6px; margin-left:70px" [(ngModel)]="verifyName">
-  
-        <!-- Ajoutez d'autres champs KYC ici -->
-
-        <div style="margin-top: 10px; margin-left:130px;">
-            <button (click)="validatePayment()">Validate Payment</button>
-        </div>
-        <div>
-          <h2>{{message}}</h2>
-        </div>
-        
-      </div>
-    </div>
-  
-    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  <div>
+    <!-- <label for="reference">Reference:</label><br /> -->
+    <input
+      placeholder="Reference"
+      type="text"
+      id="reference"
+      [(ngModel)]="reference"
+    />
+    <button (click)="searchTransfer()" class="chercher">Search Transfer</button>
   </div>
 
-  
+  <div *ngIf="orderIssuer && transferInfo">
+    <div class="summary">
+      <h3>Order Issuer Information</h3>
+      <div class="mini-container">
+        <p>
+          ID Agent/Wallet:<b>
+          {{ orderIssuer.agentId || orderIssuer.wallet }}</b>
+        </p>
+
+        <p>Full Name: <b>{{ orderIssuer.fullName }}</b></p>
+        <p> Date of Emission: <b>{{ orderIssuer.emissionDate }}</b></p>
+      </div>
+      
+    
+      <h3>Transfer Information:</h3>
+      <div class="mini-container">
+        <p>
+          Amount to Serve: <b>{{ transferInfo.amount }}</b>
+        </p>
+        <p>
+          Beneficiary Name: <b>{{ transferInfo.beneficiaryFullName }}</b>
+        </p>
+      </div>
+    </div>
+
+    <div *ngIf="!beneficiaryInfo">
+      <!-- <label for="beneficiaryName">Beneficiary Name:</label> -->
+      <input placeholder="Beneficiary Name"
+        type="text"
+        id="beneficiaryName"
+        
+        [(ngModel)]="verifyName"
+      />
+      <!-- Ajoutez d'autres champs KYC ici -->
+
+      <div>
+        <button (click)="validatePayment()">Validate Payment</button>
+      </div>
+      <div>
+        <h2>{{ message }}</h2>
+      </div>
+    </div>
+    
+  </div>
+
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+</div>

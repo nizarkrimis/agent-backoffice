@@ -1,64 +1,74 @@
 /* src/app/national-transfer-multiple/national-transfer-multiple.component.css */
 div {
-    max-width: 400px;
-    margin: 20px auto;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background: #008995;
+  max-width: 60%;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: rgb(0, 137, 149, 0.5);
+}
 
-  }
+h2 {
+  text-align: center;
+  color: #fff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+select,
+input,
+textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background: #fff;
+  color: #008995;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 3px solid #008995;
+}
+
+button:hover {
+  background: #008995;
+  border: 3px solid #fff;
+  color: #fff;
+}
+
+/* Added style for added receivers */
+ul {
+  list-style-type: none;
+  padding:10px 0;
+  list-style: inside;
+}
+
+li {
+  margin-bottom: 5px;
   
-  h2 {
-    text-align: center;
-    color: #fff;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    margin-top: 10px;
-    color: #fff;
-  }
-  
-  select, input, textarea {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  button {
-    background: #FFF;
-    color: #008995;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-bottom: 10px;
-    border: 3px solid #008995;
-    
-  }
-  
-  button:hover {
-    background: #008995;
-    border: 3px solid #FFF;
-    color: #FFF;
-  }
-  
-  /* Added style for added receivers */
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    margin-bottom: 5px;
-  }
-  
+}
+
+.receiver{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  background: rgb(0, 137, 149, 0.4);
+}

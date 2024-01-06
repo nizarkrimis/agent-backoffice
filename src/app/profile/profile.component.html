@@ -1,59 +1,107 @@
 <app-navbar></app-navbar>
 
 <div class="profile-container">
-    <h2>User Profile</h2>
-    <div class="profile-info">
-      <img [src]="photoUrl" alt="User Photo">
+  <h2>User Profile</h2>
+  <div class="profile-info">
+    <div class="left">
       <ul>
-        <li><strong>Username:</strong> {{ username }}</li>
-        <li><strong>First Name:</strong> {{ firstName }}</li>
-        <li><strong>Last Name:</strong> {{ lastName }}</li>
-        <li><strong>CNE:</strong> {{ cne }}</li>
-        <li><strong>Phone:</strong> {{ phone }}</li>
-        <li><strong>Email:</strong> {{ email }}</li>
-        <li><strong>Account ID:</strong> {{ accountId }}</li>
+        <li><strong>Username:</strong> </li><li>{{ username }}</li>
+        <li><strong>First Name:</strong></li><li> {{ firstName }}</li>
+        <li><strong>Last Name:</strong> </li><li> {{ lastName }}</li>
+        <li><strong>CNE:</strong> </li><li> {{ cne }}</li>
+        <li><strong>Phone:</strong> </li><li> {{ phone }}</li>
+        <li><strong>Email:</strong> </li><li> {{ email }}</li>
+        <li><strong>Account ID:</strong> </li><li> {{ accountId }}</li>
       </ul>
     </div>
-    
-   <!-- Section d'édition -->
+    <div class="right">
+      <img [src]="photoUrl" alt="User Photo" />
+    </div>
+  </div>
+
+  <!-- Section d'édition -->
   <div *ngIf="editing" class="profile-edit">
+   <div class="modal-content">
     <table>
-        <tr>
-            <th><label for="editUsername">Username:</label></th>
-            <th><input class="field_modify" type="text" id="editUsername" [(ngModel)]="username"></th>
-        </tr>
-        <tr>
-            <th><label for="editfname">First name:</label></th>
-            <th><input class="field_modify" type="text" id="editfname" [(ngModel)]="firstName"></th>
-        </tr>
-        <tr>
-            <th><label for="editlname">Last Name:</label></th>
-            <th><input class="field_modify" type="text" id="editlname" [(ngModel)]="lastName"></th>
-        </tr>
-        <tr>
-            <th><label for="editcne">CNE:</label></th>
-            <th><input class="field_modify" type="text" id="editcne" [(ngModel)]="cne"></th>
-        </tr>
-        <tr>
-            <th><label for="editphone">Phone:</label></th>
-            <th><input class="field_modify" type="text" id="editphone" [(ngModel)]="phone"></th>
-        </tr>
-        <tr>
-            <th><label for="editlemail">Email:</label></th>
-            <th><input class="field_modify" type="text" id="editlemail" [(ngModel)]="email"></th>
-        </tr>
+      <tr>
+        <th><label for="editUsername">Username:</label></th>
+        <th>
+          <input
+            class="field_modify"
+            type="text"
+            id="editUsername"
+            [(ngModel)]="username"
+          />
+        </th>
+      </tr>
+      <tr>
+        <th><label for="editfname">First name:</label></th>
+        <th>
+          <input
+            class="field_modify"
+            type="text"
+            id="editfname"
+            [(ngModel)]="firstName"
+          />
+        </th>
+      </tr>
+      <tr>
+        <th><label for="editlname">Last Name:</label></th>
+        <th>
+          <input
+            class="field_modify"
+            type="text"
+            id="editlname"
+            [(ngModel)]="lastName"
+          />
+        </th>
+      </tr>
+      <tr>
+        <th><label for="editcne">CNE:</label></th>
+        <th>
+          <input
+            class="field_modify"
+            type="text"
+            id="editcne"
+            [(ngModel)]="cne"
+          />
+        </th>
+      </tr>
+      <tr>
+        <th><label for="editphone">Phone:</label></th>
+        <th>
+          <input
+            class="field_modify"
+            type="text"
+            id="editphone"
+            [(ngModel)]="phone"
+          />
+        </th>
+      </tr>
+      <tr>
+        <th><label for="editlemail">Email:</label></th>
+        <th>
+          <input
+            class="field_modify"
+            type="text"
+            id="editlemail"
+            [(ngModel)]="email"
+          />
+        </th>
+      </tr>
     </table>
 
     <!-- Ajoutez des champs similaires pour d'autres informations -->
 
-    <span style="margin-left:600px;">
-        <button (click)="saveChanges()">Save Changes</button>
-        <button (click)="cancelEdit()">Cancel</button>
+    <span style="margin-left: 600px">
+      <button (click)="saveChanges()">Save Changes</button>
+      <button (click)="cancelEdit()">Cancel</button>
     </span>
+  </div>
   </div>
 
   <!-- Bouton pour basculer entre les modes -->
-  <button style="margin-left:700px;" *ngIf="!editing" (click)="editProfile()">Edit</button>
-
-  </div>
-  
+  <button style="margin-left: 700px" *ngIf="!editing" (click)="editProfile()">
+    Edit
+  </button>
+</div>

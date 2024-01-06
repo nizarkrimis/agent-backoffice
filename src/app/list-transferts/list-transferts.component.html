@@ -2,25 +2,36 @@
 
 <div class="transfers-container">
   <h1>List of Transfers</h1>
+  <input placeholder="Search" type="text" [(ngModel)]="searchInput" (input)="searchTransers()" />
+<button routerLink="/transfer-service" routerLinkActive="active" >Transfer Service</button>
+
   <table class="transfers-table">
     <thead>
       <tr>
-        <th>Date</th>
-        <th>Sender</th>
-        <th>Receiver</th>
+        <th>Transfer Reference</th>
+
+        <th>Sender ID</th>
+        <th>Receiver ID</th>
         <th>Amount</th>
         <th>Type</th>
+        <th>State</th>
+        <th>Date</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let transfer of transfers">
-        <td>{{ transfer.date }}</td>
-        <td>{{ transfer.sender }}</td>
-        <td>{{ transfer.receiver }}</td>
-        <td>{{ transfer.amount }}</td>
+      <tr *ngFor="let transfer of filteredTransers">
+        <td>{{ transfer.transerReference }}</td>
+        <td>{{ transfer.senderid }}</td>
+        <td>{{ transfer.receiverid }}</td>
+        <td>
+          <b>{{ transfer.amount }} DH</b>
+        </td>
         <td>{{ transfer.type }}</td>
+        <td>
+          <b>{{ transfer.state }}</b>
+        </td>
+        <td>{{ transfer.date }}</td>
       </tr>
     </tbody>
   </table>
 </div>
-

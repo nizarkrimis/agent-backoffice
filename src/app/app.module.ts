@@ -12,7 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { TransferServiceComponent } from './transfer-service/transfer-service.component';
 import { ClientComponent } from './client/client.component';
-import { ClientDetailsComponent } from './client-details/client-details.component'; 
+import { ClientDetailsComponent } from './client-details/client-details.component';
+
 // Import FormsModule
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ClientDetailsComponent } from './client-details/client-details.componen
     ProfileComponent,
     TransferServiceComponent,
     ClientComponent,
-    ClientDetailsComponent
+    ClientDetailsComponent,
+   
   ],
   imports: [
     BrowserModule,

@@ -17,7 +17,7 @@ export class ProfileComponent {
   public phone: string = '123-456-7890';
   public email: string = 'john.doe@example.com';
   public accountId: string = 'A123456789';
-  public photoUrl: string = 'https://placekitten.com/200/200'; // Lien d'exemple vers une photo
+  public photoUrl: string = 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png'; // Lien d'exemple vers une photo
   public editing: boolean = false;
 
   public editProfile(): void {
