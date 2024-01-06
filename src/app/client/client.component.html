@@ -2,7 +2,12 @@
 
 <div class="client-list">
   <h1>Client List</h1>
-  <input placeholder="Search" type="text" [(ngModel)]="searchInput" (input)="searchClients()" />
+  <input
+    placeholder="Search"
+    type="text"
+    [(ngModel)]="searchInput"
+    (input)="searchClients()"
+  />
 
   <button (click)="openAddClientModal()">Add Client</button>
 
@@ -19,7 +24,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let client of filteredClients" (click)="goToClientDetails(client.id)">
+      <tr
+        *ngFor="let client of filteredClients"
+        (click)="goToClientDetails(client.id)"
+      >
         <td>{{ client.id }}</td>
         <td>{{ client.firstname }} {{ client.lastname }}</td>
         <td>{{ client.email }}</td>
@@ -86,13 +94,24 @@
       />
 
       <!-- <label for="accountType">Account Type:</label> -->
-      <input
+      <!-- <input
         placeholder="Account Type"
         type="text"
         id="accountType"
         name="accountType"
         ngModel
-      />
+      /> -->
+      <select
+        id="accountType"
+        name="accountType"
+        ngModel
+        required
+      >
+      <option value="" disabled selected>Account Type</option>
+        <option value="Premium">Premium</option>
+        <option value="Normal">Normal</option>
+        <!-- Add more transfer types as needed -->
+      </select>
 
       <button type="submit">Add Client</button>
       <button type="button" (click)="closeAddClientModal()">Cancel</button>
