@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+// import { HttpModule } from '@angular/http';
+import { HttpClientModule,HttpClient } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +16,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { TransferServiceComponent } from './transfer-service/transfer-service.component';
 import { ClientComponent } from './client/client.component';
 import { ClientDetailsComponent } from './client-details/client-details.component';
+
+import { LoginServiceService } from './service/login-service.service';
 
 // Import FormsModule
 
@@ -33,9 +38,13 @@ import { ClientDetailsComponent } from './client-details/client-details.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    
   ],
-  providers: [],
+  providers: [
+    // LoginServiceService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,8 +13,8 @@
   <div class="login-card">
     <img class="profil-icon" src="assets/profil-login.png" />
     <div class="input-div">
-      <input placeholder="Username" />
-      <input placeholder="Password" />
+      <input [(ngModel)]="username" placeholder="Username" />
+      <input [(ngModel)]="password" type="password" placeholder="Password" />
     </div>
     <button (click)="login()">LOGIN</button>
   </div>
