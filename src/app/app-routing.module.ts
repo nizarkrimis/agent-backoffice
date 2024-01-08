@@ -8,19 +8,19 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ClientComponent } from './client/client.component';
 import { ClientDetailsComponent } from './client-details/client-details.component';
-
+import { AuthGuard } from './gaurds/auth.guard';
 const routes: Routes = [
   // ... other routes
   { path:'',pathMatch:'full',redirectTo:'login' },
 
-  { path: 'list-transferts', component:ListTransfertsComponent },
-  {path: 'create-national-transfer', component:CreateNationalTransferComponent },
-  {path: 'national-transfer-multiple', component:NationalTransferMultipleComponent },
-  {path : 'transfer-service', component:TransferServiceComponent },
-  {path : 'login', component:LoginComponent },
-  {path : 'profile', component:ProfileComponent },
-  {path : 'clients', component:ClientComponent },
-  { path: 'client/:id', component:ClientDetailsComponent },
+  { path: 'list-transferts', component:ListTransfertsComponent, canActivate: [AuthGuard]  },
+  {path: 'create-national-transfer', component:CreateNationalTransferComponent, canActivate: [AuthGuard]  },
+  {path: 'national-transfer-multiple', component:NationalTransferMultipleComponent, canActivate: [AuthGuard]  },
+  {path : 'transfer-service', component:TransferServiceComponent , canActivate: [AuthGuard]  },
+  {path : 'login', component:LoginComponent   },
+  {path : 'profile', component:ProfileComponent, canActivate: [AuthGuard]  },
+  {path : 'clients', component:ClientComponent, canActivate: [AuthGuard]  },
+  { path: 'client/:id', component:ClientDetailsComponent, canActivate: [AuthGuard]  },
 
 ];
 

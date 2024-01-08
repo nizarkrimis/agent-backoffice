@@ -3,13 +3,15 @@
     <label for="check" class="checkbtn">
       <i class="fas fa-bars"></i>
     </label>
-    <label class="logo" routerLink="/" routerLinkActive="active" >Transfer X</label>
+    <label class="logo" routerLink="/list-transferts" routerLinkActive="active" >Transfer X</label>
     <ul>
-      <li><a routerLink="/list-transferts" routerLinkActive="active">Transfers</a></li>
+      <li><a class="normal" routerLink="/list-transferts" routerLinkActive="active">Transfers</a></li>
       <!-- <li><a routerLink="/create-national-transfer" routerLinkActive="active">Single Transfer</a></li> -->
       <!-- <li><a routerLink="/national-transfer-multiple" routerLinkActive="active">Transfer M</a></li> -->
       <!-- <li><a routerLink="/transfer-service" routerLinkActive="active">Transfer Service</a></li> -->
-      <li><a routerLink="/clients" routerLinkActive="active">Clients</a></li>
-      <li><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
+      <li><a class="normal" routerLink="/clients" routerLinkActive="active">Clients</a></li>
+      <li><a class="normal" routerLink="/profile" routerLinkActive="active">Profile</a></li>
+      <li><a class="logout" (click)="logout()" >Logout</a></li>
+
     </ul>
   </nav>
