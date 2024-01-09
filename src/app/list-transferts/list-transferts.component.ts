@@ -20,9 +20,17 @@ export class ListTransfertsComponent implements OnInit {
   filteredTransfers: any[] = [];
   searchInput: string = '';
 
-  constructor() { 
+  constructor(private transferService:TransfertsService) { 
     this.filteredTransfers = this.transfers;
   }
+  ngOnInit(){
+    this.transferService.getTransfers().subscribe((response:any)=>{
+      console.log(response)
+      this.transfers=response;
+      this.filteredTransfers=response;
+    })
+  }
+
   searchTransfers(): void {
     this.filteredTransfers = this.transfers.filter(transfer =>
       Object.values(transfer).some(value => {
@@ -35,6 +43,5 @@ export class ListTransfertsComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void { }
 
 }

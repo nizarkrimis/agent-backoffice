@@ -14,7 +14,7 @@
         <th>Sender ID</th>
         <th>Receiver ID</th>
         <th>Amount</th>
-        <th>Type</th>
+        <!-- <th>Type</th> -->
         <th>State</th>
         <th>Date</th>
         <th>Action</th>
@@ -22,17 +22,17 @@
     </thead>
     <tbody>
       <tr *ngFor="let transfer of filteredTransfers">
-        <td>{{ transfer.transerReference }}</td>
-        <td>{{ transfer.senderid }}</td>
-        <td>{{ transfer.receiverid }}</td>
+        <td>{{ transfer.transferReference }}</td>
+        <td>{{ transfer.sender }}</td>
+        <td>{{ transfer.receiver }}</td>
         <td>
-          <b>{{ transfer.amount }} DH</b>
+          <b>{{ transfer.amount | number:'1.2-2' }} DH</b>
         </td>
-        <td>{{ transfer.type }}</td>
+        <!-- <td>{{ transfer.type }}</td> -->
         <td>
-          <b>{{ transfer.state }}</b>
+          <b>{{ transfer.status }}</b>
         </td>
-        <td>{{ transfer.date }}</td>
+        <td>{{ transfer.timestamp |  date:'dd-MM-yy HH:mm:ss'}}</td>
         <td class="warn">
           <button>Extourner</button>
           &nbsp; &nbsp;
