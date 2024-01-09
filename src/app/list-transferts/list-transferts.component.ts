@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgComponentOutlet } from '@angular/common';
 import { TransfertsService } from '../service/transferts.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-list-transferts',
@@ -20,9 +21,17 @@ export class ListTransfertsComponent implements OnInit {
   filteredTransfers: any[] = [];
   searchInput: string = '';
 
-  constructor() { 
+  constructor(private transferService:TransfertsService,private toastr:ToastrService) { 
     this.filteredTransfers = this.transfers;
   }
+  ngOnInit(){
+    this.transferService.getTransfers().subscribe((response:any)=>{
+      console.log(response)
+      this.transfers=response;
+      this.filteredTransfers=response;
+    })
+  }
+
   searchTransfers(): void {
     this.filteredTransfers = this.transfers.filter(transfer =>
       Object.values(transfer).some(value => {
@@ -35,6 +44,17 @@ export class ListTransfertsComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void { }
+  extourneTransfer(transferReference:any){
+    console.log(transferReference)
+    let extourneRequest={transferReference:transferReference,agentId:99,motif:"Do Better"};
+    this.transferService.extourneTransfer(extourneRequest).subscribe((response:any)=>{
+      console.log(response)
+      if(response.msg.includes("succés")){
+        this.toastr.success(response.msg,"Toastr");
+      }else{
+        this.toastr.success(response.msg,"Toastr");
+      }
+    });
+  }
 
 }

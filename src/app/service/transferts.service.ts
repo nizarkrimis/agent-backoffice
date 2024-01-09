@@ -1,3 +1,4 @@
+import { HttpClient , HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
@@ -13,7 +14,30 @@ export class TransfertsService {
     // Add more static transfer data as needed
   ];
 
-  getTransfers(): Observable<any[]> {
-    return of(this.transfers);
+  constructor(private httpClient : HttpClient){}
+
+  url="http://localhost:8091/transfers/";
+  urlServie="http://localhost:8091/servir/";
+  urlExtourne="http://localhost:8091/extourne";
+
+  headers=new HttpHeaders({
+    'Content-Type':'application/json',
+    'Access-Control-Allow-Origin':'*'
+  })
+
+  getTransfers(): Observable<Object> {
+    return this.httpClient.get(this.url+"all");
+  }
+
+  getTransferByRef(reference:string | null):Observable<Object>{
+    return this.httpClient.get(this.url+reference);
+  }
+
+  servieEspeceClientAgent(servirBody:any):Observable<Object>{
+    return this.httpClient.post(this.urlServie+"espece-console",servirBody,{headers : this.headers});
+  }
+
+  extourneTransfer(extourneRequest:any):Observable<Object> {
+    return this.httpClient.post(this.urlExtourne,extourneRequest,{headers:this.headers});
   }
 }

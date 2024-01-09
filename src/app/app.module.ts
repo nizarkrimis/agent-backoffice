@@ -18,6 +18,8 @@ import { ClientComponent } from './client/client.component';
 import { ClientDetailsComponent } from './client-details/client-details.component';
 
 import { LoginServiceService } from './service/login-service.service';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Import FormsModule
 
@@ -40,6 +42,8 @@ import { LoginServiceService } from './service/login-service.service';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ToastrModule.forRoot({}),
+    BrowserAnimationsModule,
     
   ],
   providers: [

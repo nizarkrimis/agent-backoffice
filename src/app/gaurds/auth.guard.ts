@@ -14,14 +14,15 @@ export class AuthGuard implements CanActivate {
     // Check if the token is present in local storage
     const token = localStorage.getItem('token');
 
-    if (token) {
-      // User is authenticated, allow access
-      return true;
-    } else {
-      // User is not authenticated, redirect to the login page
-      this.router.navigate(['login']);
-      return false;
-    }
+    // if (token) {
+    //   // User is authenticated, allow access
+    //   return true;
+    // } else {
+    //   // User is not authenticated, redirect to the login page
+    //   this.router.navigate(['login']);
+    //   return false;
+    // }
+    return true;
   }
   
 }

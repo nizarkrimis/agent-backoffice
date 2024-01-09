@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'list-transferts', component:ListTransfertsComponent, canActivate: [AuthGuard]  },
   {path: 'create-national-transfer', component:CreateNationalTransferComponent, canActivate: [AuthGuard]  },
   {path: 'national-transfer-multiple', component:NationalTransferMultipleComponent, canActivate: [AuthGuard]  },
-  {path : 'transfer-service', component:TransferServiceComponent , canActivate: [AuthGuard]  },
+  {path : 'transfer-service/:reference', component:TransferServiceComponent , canActivate: [AuthGuard]  },
   {path : 'login', component:LoginComponent   },
   {path : 'profile', component:ProfileComponent, canActivate: [AuthGuard]  },
   {path : 'clients', component:ClientComponent, canActivate: [AuthGuard]  },
