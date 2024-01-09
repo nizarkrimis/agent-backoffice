@@ -18,6 +18,8 @@ export class TransfertsService {
 
   url="http://localhost:8091/transfers/";
   urlServie="http://localhost:8091/servir/";
+  urlExtourne="http://localhost:8091/extourne";
+
   headers=new HttpHeaders({
     'Content-Type':'application/json',
     'Access-Control-Allow-Origin':'*'
@@ -27,11 +29,15 @@ export class TransfertsService {
     return this.httpClient.get(this.url+"all");
   }
 
-  getTransferByRef(reference:string):Observable<Object>{
+  getTransferByRef(reference:string | null):Observable<Object>{
     return this.httpClient.get(this.url+reference);
   }
 
   servieEspeceClientAgent(servirBody:any):Observable<Object>{
     return this.httpClient.post(this.urlServie+"espece-console",servirBody,{headers : this.headers});
+  }
+
+  extourneTransfer(extourneRequest:any):Observable<Object> {
+    return this.httpClient.post(this.urlExtourne,extourneRequest,{headers:this.headers});
   }
 }

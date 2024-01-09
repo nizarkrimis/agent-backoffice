@@ -62,7 +62,7 @@ export class TransferServiceComponent {
   ngOnInit(){
     this.reference=this.route.snapshot.paramMap.get('reference');
     // console.log(this.reference)
-    this.transferService.getTransferByRef("001").subscribe((response:any)=>{
+    this.transferService.getTransferByRef(this.reference).subscribe((response:any)=>{
       console.log(response);
       this.transfer=response.transferDTO;
       this.beneficiary=response.beneficiary;
