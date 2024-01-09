@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 
 <div>
-  <h2>National Transfer to Multiple Receivers</h2>
+  <h2>National Transfer</h2>
   <form (submit)="submitTransfer()" #transferForm="ngForm">
     <label for="sender">Sender:</label>
 <span>{{ senderName }}</span>
@@ -16,10 +16,17 @@
       required
     />
 
-    <label for="type">Type:</label>
+    <label for="type">Fee Type:</label>
     <select id="type" name="type" [(ngModel)]="type" required>
-      <option value="Internal">Internal</option>
-      <option value="External">External</option>
+      <option value="DONOR">DONOR</option>
+      <option value="BENEFICIARY">BENEFICIARY</option>
+      <option value="BOTH">BOTH</option>
+    </select>
+
+    <label for="operationType">Operation Type:</label>
+    <select id="operationType" name="operationType" [(ngModel)]="operationType" required>
+      <option value="DEBIT_CONSOLE_AGENT">Debit from customer account</option>
+      <option value="ESPECE_CONSOLE_AGENT">By Cash</option>
     </select>
 
     <label for="receivers">Receivers:</label>
@@ -28,17 +35,17 @@
       name="selectedReceiver"
       [(ngModel)]="selectedReceiver"
     >
-      <option *ngFor="let receiver of receiverList" [value]="receiver">
-        {{ receiver }}
+      <option *ngFor="let receiver of receiverList" [value]="receiver['id']">
+        {{ receiver['firstName'] }} {{ receiver['lastName'] }} 
       </option>
     </select>
 
     <button type="button" (click)="addReceiver()">Add Receiver</button>
 
-    <div  class="receiver" *ngIf="addedReceivers.length > 0">
+    <div  class="receiver" *ngIf="addedReceiver">
       <label>Added Receivers:</label>
       <ul>
-        <li *ngFor="let receiver of addedReceivers">{{ receiver }}</li>
+        <li >{{ addedReceiver }}</li>
       </ul>
     </div>
 

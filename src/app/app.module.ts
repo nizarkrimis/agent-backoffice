@@ -20,6 +20,7 @@ import { ClientDetailsComponent } from './client-details/client-details.componen
 import { LoginServiceService } from './service/login-service.service';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OtpVerificationComponent } from './otp-verification/otp-verification.component';
 
 // Import FormsModule
 
@@ -35,6 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TransferServiceComponent,
     ClientComponent,
     ClientDetailsComponent,
+    OtpVerificationComponent,
    
   ],
   imports: [
