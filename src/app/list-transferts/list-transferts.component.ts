@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgComponentOutlet } from '@angular/common';
 import { TransfertsService } from '../service/transferts.service';
 import { ToastrService } from 'ngx-toastr';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-list-transferts',
@@ -21,7 +22,7 @@ export class ListTransfertsComponent implements OnInit {
   filteredTransfers: any[] = [];
   searchInput: string = '';
 
-  constructor(private transferService:TransfertsService,private toastr:ToastrService) { 
+  constructor(private transferService:TransfertsService,private toastr:ToastrService,private httpClient: HttpClient) { 
     this.filteredTransfers = this.transfers;
   }
   ngOnInit(){
@@ -55,6 +56,26 @@ export class ListTransfertsComponent implements OnInit {
         this.toastr.success(response.msg,"Toastr");
       }
     });
+  }
+
+
+  restituerTransfer(transferReference:any)
+  {
+    const headers = {
+      'Content-Type': 'application/json'
+    };
+    const searchParams={
+      transferReference:transferReference,
+      operationType:"ESPECE_CONSOLE_AGENT",
+      motif:"This is better"
+    }
+
+    const apiUrl = `http://localhost:8091/operation/restitution`;
+    this.httpClient.post(apiUrl, searchParams,{headers}).subscribe(
+      (response: any) => {
+        console.log(response);
+      },
+      ); 
   }
 
 }
