@@ -53,7 +53,7 @@ export class ListTransfertsComponent implements OnInit {
       if(response.msg.includes("succés")){
         this.toastr.success(response.msg,"Toastr");
       }else{
-        this.toastr.success(response.msg,"Toastr");
+        this.toastr.warning(response.msg,"Toastr");
       }
     });
   }

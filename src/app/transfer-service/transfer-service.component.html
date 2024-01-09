@@ -3,6 +3,11 @@
 <div class="transfer-service-container carte">
   <h1>Transfer Service</h1>
 
+  <div style="display: flex;justify-content:space-around">
+    <button style="width: 40%;" (click)="toggleWallet()">Wallet</button>
+    <button style="width: 40%;" (click)="toggleEspece()">Espece</button>
+  </div>
+
   <!-- <label for="reference">Reference:</label><br /> -->
   <!-- <div>
     <input
@@ -14,8 +19,9 @@
     <button (click)="searchTransfer()" class="chercher">Search Transfer</button>
   </div> -->
 
-  <div *ngIf="transfer">
+  <div *ngIf="isEspece && transfer">
     <div class="summary">
+      <h1 style="color: brown;" >ESPECE</h1>
       <h3>Order Issuer Information</h3>
       <div class="mini-container">
         <p>
@@ -54,6 +60,60 @@
       <!-- Ajoutez d'autres champs KYC ici -->
 
       <div>
+        <button (click)="validatePayment()">Validate Payment</button>
+      </div>
+      <div>
+        <h2 *ngIf="message">{{ message }}</h2>
+      </div>
+    </div>
+    
+  </div>
+
+  <div *ngIf="isWallet && transfer">
+    <div class="summary">
+      <h1 style="color: brown;" >WALLET</h1>
+      <h3>Order Issuer Information</h3>
+      <div class="mini-container">
+        <p>
+          ID Agent/Wallet:<b>
+          {{ transfer.sender }}</b>
+        </p>
+        <p>
+          Wallet:<b>{{transfer.sender}}</b>
+        </p>
+
+        <p>Full Name: <b>{{ customer.firstName }} {{ customer.lastName }}</b></p>
+        <p> Date of Emission: <b>{{ transfer.timestamp | date:'dd-MM-yy' }}</b></p>
+      </div>
+      
+    
+      <h3>Transfer Information:</h3>
+      <div class="mini-container">
+        <p>
+          Amount to Serve: <b>{{ transfer.amount }}</b>
+        </p>
+        <p>
+          Beneficiary Name: <b>{{ beneficiary.firstName }} {{ beneficiary.lastName }}</b>
+        </p>
+      </div>
+      <div>
+        <input *ngIf="isOtpValidation" placeholder="OTP Code" [(ngModel)]="otpCode" />
+        <button *ngIf="isOtpValidation" (click)="validateOTP()" >Validate OTP & Payment</button>
+      </div>
+    </div>
+
+    <!-- <div *ngIf="!beneficiaryInfo"> -->
+    <div >
+      <!-- <label for="beneficiaryName">Beneficiary Name:</label> -->
+      <!-- <input placeholder="Beneficiary Name"
+        type="text"
+        id="beneficiaryName"
+        
+        [(ngModel)]="verifyName"
+      /> -->
+      <!-- Ajoutez d'autres champs KYC ici -->
+
+      <div *ngIf="!isOtpValidation" >
         <button (click)="validatePayment()">Validate Payment</button>
       </div>
       <div>
