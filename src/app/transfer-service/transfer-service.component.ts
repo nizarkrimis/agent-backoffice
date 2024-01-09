@@ -74,6 +74,8 @@ export class TransferServiceComponent {
   }
   
   message:any;
+  otpCode:any;
+  isOtpValidation=false;
   // verifyName: string='';
   
   // beneficiaryInfo = null;
@@ -92,9 +94,15 @@ export class TransferServiceComponent {
 
   toggleEspece(){
     this.isEspece=!this.isEspece;
+    if(this.isWallet==true){
+      this.toggleWallet();
+    }
   }
   toggleWallet(){
     this.isWallet=!this.isWallet;
+    if(this.isEspece==true){
+      this.toggleEspece();
+    }
   }
 
   validatePayment(){
@@ -104,8 +112,24 @@ export class TransferServiceComponent {
     //   this.message='Payement not validated';
     // }
     console.log({transferReference:this.transfer.transferReference,agentId:88,beneficiaryId:this.beneficiary.id})
-    this.transferService.servieEspeceClientAgent({transferReference:this.transfer.transferReference,agentId:88,beneficiaryId:this.beneficiary.id}).subscribe((response:any)=>{
+    
+    if(this.isEspece){
+      this.transferService.servieEspeceClientAgent({transferReference:this.transfer.transferReference,agentId:88,beneficiaryId:this.beneficiary.id}).subscribe((response:any)=>{
+        this.message=response.msg;
+      })
+    }else if(this.isWallet){
+      this.transferService.servieWalletConsoleAgent({transferReference:this.transfer.transferReference,agentId:88,beneficiaryId:this.beneficiary.id}).subscribe((response:any)=>{
+        this.message=response.msg;
+        this.isOtpValidation=true;
+      })
+    }
+  }
+
+  validateOTP(){
+    console.log({otp:this.otpCode,transferRef:this.transfer.transferReference,agentId:88})
+    this.transferService.servieWalletConsoleAgentVerifyOtp({otp:this.otpCode,transferRef:this.transfer.transferReference,agentId:88}).subscribe((response:any)=>{
       this.message=response.msg;
+      // this.isOtpValidation=false;
     })
   }
 

@@ -40,4 +40,13 @@ export class TransfertsService {
   extourneTransfer(extourneRequest:any):Observable<Object> {
     return this.httpClient.post(this.urlExtourne,extourneRequest,{headers:this.headers});
   }
+
+  servieWalletConsoleAgent(servirBody:any):Observable<Object>{
+    return this.httpClient.post(this.urlServie+"wallet",servirBody,{headers:this.headers});
+  }
+
+  servieWalletConsoleAgentVerifyOtp(servirOtpRequest:any):Observable<Object>{
+    return this.httpClient.post(this.urlServie+"wallet/verify-otp",servirOtpRequest,{headers:this.headers});
+  }
+
 }
