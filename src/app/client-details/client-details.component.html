@@ -5,10 +5,10 @@
   <div *ngIf="client">
     <dl>
       <dt>ID:</dt>
-      <dd>{{ client.id }}</dd>
+      <dd>{{ client.customerId }}</dd>
 
       <dt>Name:</dt>
-      <dd>{{ client.firstname }} {{ client.lastname }}</dd>
+      <dd>{{ client.firstName }} {{ client.lastName }}</dd>
 
       <dt>Email:</dt>
       <dd>{{ client.email }}</dd>
@@ -22,8 +22,8 @@
       <dt>Balance:</dt>
       <dd>{{ client.balance }}</dd>
 
-      <dt>Account Type:</dt>
-      <dd>{{ client.accountType }}</dd>
+      <dt>Annual Ceiling:</dt>
+      <dd>{{ client.plafondAnnuel }}</dd>
     </dl>
 
     <!-- Add the "Send Transfer" button with a click event -->

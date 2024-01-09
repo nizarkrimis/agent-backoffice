@@ -18,6 +18,7 @@ import { ClientComponent } from './client/client.component';
 import { ClientDetailsComponent } from './client-details/client-details.component';
 
 import { LoginServiceService } from './service/login-service.service';
+import { OtpVerificationComponent } from './otp-verification/otp-verification.component';
 
 // Import FormsModule
 
@@ -33,6 +34,7 @@ import { LoginServiceService } from './service/login-service.service';
     TransferServiceComponent,
     ClientComponent,
     ClientDetailsComponent,
+    OtpVerificationComponent,
    
   ],
   imports: [

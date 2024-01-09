@@ -20,21 +20,21 @@
         <th>CNE</th>
         <th>Phone</th>
         <th>Balance</th>
-        <th>Account Type</th>
+        <th>Annual Ceiling</th>
       </tr>
     </thead>
     <tbody>
       <tr
         *ngFor="let client of filteredClients"
-        (click)="goToClientDetails(client.id)"
+        (click)="goToClientDetails(client.customerId)"
       >
-        <td>{{ client.id }}</td>
-        <td>{{ client.firstname }} {{ client.lastname }}</td>
+        <td>{{ client.customerId }}</td>
+        <td>{{ client.firstName }} {{ client.lastName }}</td>
         <td>{{ client.email }}</td>
         <td>{{ client.cne }}</td>
         <td>{{ client.phone }}</td>
         <td>{{ client.balance }}</td>
-        <td>{{ client.accountType }}</td>
+        <td>{{ client.plafondAnnuel }}</td>
       </tr>
     </tbody>
   </table>

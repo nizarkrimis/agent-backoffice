@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -11,13 +12,20 @@ export class ClientDetailsComponent implements OnInit {
   clientId!: number;
   client: any; // You can define a client model if needed
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router,private httpClient: HttpClient) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.clientId = +params['id']; // '+' converts string to number
       // For simplicity, you can directly fetch the client from the static data
-      this.client = this.clients.find(c => c.id === this.clientId);
+      const apiUrl = `http://localhost:8092/customers/${this.clientId}`;
+      this.httpClient.get(apiUrl).subscribe(
+     (response: any) => {
+       console.log(response)
+       this.client=response;
+       
+     },
+     );
     });
   }
 
@@ -31,9 +39,9 @@ export class ClientDetailsComponent implements OnInit {
   // Add this method to navigate to national-transfer-multiple.component
   sendTransfer(): void {
     if (this.client) {
-      const clientName = `${this.client.firstname} ${this.client.lastname}`;
+      const clientName = `${this.client.firstName} ${this.client.lastName}`;
       // Navigate to national-transfer-multiple.component and pass the client's name
-      this.router.navigate(['/national-transfer-multiple', { name: clientName }]);
+      this.router.navigate(['/national-transfer-multiple', this.client]);
     }
   }
 }

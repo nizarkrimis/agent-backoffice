@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-client',
@@ -7,21 +9,34 @@ import { Router } from '@angular/router';
   styleUrls: ['./client.component.css']
 })
 export class ClientComponent {
-  clients = [
-    { id: 1, firstname: "Client", lastname: '1', cne: 'EE995566', email: 'client1@example.com', phone: "0600000001", balance: 1500, accountType: "Normale" },
-    { id: 2, firstname: "Client", lastname: '2', cne: 'EE995567', email: 'client2@example.com', phone: "0600000002", balance: 2000, accountType: "Normale" },
-    { id: 3, firstname: "Client", lastname: '3', cne: 'EE995568', email: 'client3@example.com', phone: "0600000003", balance: 1200, accountType: "Normale" },
-    { id: 4, firstname: "Client", lastname: '4', cne: 'EE995569', email: 'client4@example.com', phone: "0600000004", balance: 1800, accountType: "Normale" },
-    { id: 5, firstname: "Client", lastname: '5', cne: 'EE995570', email: 'client5@example.com', phone: "0600000005", balance: 2500, accountType: "Normale" },
-  ];
+  clients = [{}];
+    // { id: 1, firstname: "Client", lastname: '1', cne: 'EE995566', email: 'client1@example.com', phone: "0600000001", balance: 1500, accountType: "Normale" },
+    // { id: 2, firstname: "Client", lastname: '2', cne: 'EE995567', email: 'client2@example.com', phone: "0600000002", balance: 2000, accountType: "Normale" },
+    // { id: 3, firstname: "Client", lastname: '3', cne: 'EE995568', email: 'client3@example.com', phone: "0600000003", balance: 1200, accountType: "Normale" },
+    // { id: 4, firstname: "Client", lastname: '4', cne: 'EE995569', email: 'client4@example.com', phone: "0600000004", balance: 1800, accountType: "Normale" },
+    // { id: 5, firstname: "Client", lastname: '5', cne: 'EE995570', email: 'client5@example.com', phone: "0600000005", balance: 2500, accountType: "Normale" },
+  
   showAddClientModal: boolean = false;
 
   filteredClients: any[] = [];
   searchInput: string = '';
 
 
-  constructor(private router: Router) {
+  constructor(private router: Router,private httpClient: HttpClient) {
     this.filteredClients = this.clients; // Initialize filteredClients with all clients
+
+   }
+
+   ngOnInit()
+   {
+    console.log("Hiii ");
+      const apiUrl = "http://localhost:8092/customers/all-customers";
+       this.httpClient.get(apiUrl).subscribe(
+      (response: any) => {
+        console.log(response)
+        this.filteredClients=response;
+      },
+      );
 
    }
 
