@@ -9,6 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ClientComponent } from './client/client.component';
 import { ClientDetailsComponent } from './client-details/client-details.component';
 import { AuthGuard } from './gaurds/auth.guard';
+import { OtpVerificationComponent } from './otp-verification/otp-verification.component';
 const routes: Routes = [
   // ... other routes
   { path:'',pathMatch:'full',redirectTo:'login' },
@@ -21,7 +22,7 @@ const routes: Routes = [
   {path : 'profile', component:ProfileComponent, canActivate: [AuthGuard]  },
   {path : 'clients', component:ClientComponent, canActivate: [AuthGuard]  },
   { path: 'client/:id', component:ClientDetailsComponent, canActivate: [AuthGuard]  },
-
+  { path: 'otp-verification/:ref', component:OtpVerificationComponent, canActivate: [AuthGuard]  },
 ];
 
 @NgModule({

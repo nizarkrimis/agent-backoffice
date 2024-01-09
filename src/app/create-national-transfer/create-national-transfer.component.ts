@@ -11,6 +11,7 @@ export class CreateNationalTransferComponent {
   amount: number = 0;
   type: string = '';
 
+
   submitTransfer() {
     // Implement logic to handle the submission of the transfer
     console.log('Transfer submitted:', {
@@ -19,8 +20,14 @@ export class CreateNationalTransferComponent {
       amount: this.amount,
       type: this.type
     });
+
+
+    }
+
+
+
     
     // You can implement further logic, e.g., send data to a service, etc.
   }
 
-}
+
