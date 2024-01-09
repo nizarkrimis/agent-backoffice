@@ -20,9 +20,11 @@ export class LoginComponent {
         console.log("Success");
         // Assuming the response contains the token, adjust this accordingly
         const token = response;
+        const constUsername = this.username;
         
         // Store the token in local storage
         localStorage.setItem('token', token);
+        localStorage.setItem('username', constUsername);
 
         // Navigate to the profile page
         this.router.navigate(['profile']);

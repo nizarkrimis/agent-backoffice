@@ -12,6 +12,7 @@ export class NavbarComponent {
   logout() {
     // Clear the token from local storage
     localStorage.removeItem('token');
+    localStorage.removeItem('username');
     //logic redirecting to the login page
     this.router.navigate(['login']);
   }
