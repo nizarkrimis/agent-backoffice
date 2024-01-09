@@ -94,13 +94,13 @@ export class TransferServiceComponent {
 
   toggleEspece(){
     this.isEspece=!this.isEspece;
-    if(this.isWallet==true){
+    if(this.isWallet==true && this.isEspece==true){
       this.toggleWallet();
     }
   }
   toggleWallet(){
     this.isWallet=!this.isWallet;
-    if(this.isEspece==true){
+    if(this.isEspece==true && this.isWallet == true){
       this.toggleEspece();
     }
   }
