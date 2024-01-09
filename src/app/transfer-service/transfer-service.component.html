@@ -3,6 +3,9 @@
 <div class="transfer-service-container carte">
   <h1>Transfer Service</h1>
 
+  <button (click)="toggleWallet()">Wallet</button>
+  <button (click)="toggleEspece()">Espece</button>
+
   <!-- <label for="reference">Reference:</label><br /> -->
   <!-- <div>
     <input
@@ -14,7 +17,7 @@
     <button (click)="searchTransfer()" class="chercher">Search Transfer</button>
   </div> -->
 
-  <div *ngIf="transfer">
+  <div *ngIf="isEspece && transfer">
     <div class="summary">
       <h3>Order Issuer Information</h3>
       <div class="mini-container">
@@ -40,6 +43,56 @@
           Beneficiary Name: <b>{{ beneficiary.firstName }} {{ beneficiary.lastName }}</b>
         </p>
       </div>
+    </div>
+
+    <!-- <div *ngIf="!beneficiaryInfo"> -->
+    <div >
+      <!-- <label for="beneficiaryName">Beneficiary Name:</label> -->
+      <!-- <input placeholder="Beneficiary Name"
+        type="text"
+        id="beneficiaryName"
+        
+        [(ngModel)]="verifyName"
+      /> -->
+      <!-- Ajoutez d'autres champs KYC ici -->
+
+      <div>
+        <button (click)="validatePayment()">Validate Payment</button>
+      </div>
+      <div>
+        <h2 *ngIf="message">{{ message }}</h2>
+      </div>
+    </div>
+    
+  </div>
+
+  <div *ngIf="isWallet && transfer">
+    <div class="summary">
+      <h3>Order Issuer Information</h3>
+      <div class="mini-container">
+        <p>
+          ID Agent/Wallet:<b>
+          {{ transfer.sender }}</b>
+        </p>
+        <p>
+          Wallet:<b>{{transfer.sender}}</b>
+        </p>
+
+        <p>Full Name: <b>{{ customer.firstName }} {{ customer.lastName }}</b></p>
+        <p> Date of Emission: <b>{{ transfer.timestamp | date:'dd-MM-yy' }}</b></p>
+      </div>
+      
+    
+      <h3>Transfer Information:</h3>
+      <div class="mini-container">
+        <p>
+          Amount to Serve: <b>{{ transfer.amount }}</b>
+        </p>
+        <p>
+          Beneficiary Name: <b>{{ beneficiary.firstName }} {{ beneficiary.lastName }}</b>
+        </p>
+      </div>
+      <input placeholder="OTP Code" />
     </div>
 
     <!-- <div *ngIf="!beneficiaryInfo"> -->

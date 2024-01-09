@@ -19,6 +19,9 @@ export class TransferServiceComponent {
   beneficiary:any;
   customer:any;
 
+  isWallet=false;
+  isEspece=true;
+
   // public searchTransfer(): void {
   //   // Réinitialiser les données
   //   // this.orderIssuer = null;
@@ -86,6 +89,13 @@ export class TransferServiceComponent {
   //   amount: 100,
   //   beneficiaryFullName: 'krimis nizar',
   // };
+
+  toggleEspece(){
+    this.isEspece=!this.isEspece;
+  }
+  toggleWallet(){
+    this.isWallet=!this.isWallet;
+  }
 
   validatePayment(){
     // if(this.transferInfo.beneficiaryFullName.toLowerCase()===this.verifyName.toLowerCase()){
